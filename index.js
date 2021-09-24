@@ -1,47 +1,51 @@
 
 
-const { fetchMyIP, fetchCoordsByIP } = require('./iss');
+const {
+  // fetchMyIP,
+  // fetchCoordsByIP,
+  fetchISSFlyOverTimes } = require('./iss');
 
-
-fetchMyIP((error, ip) => {
-  if (error) {
-
-    console.log("It didn't work!", error);
-    return;
-  }
-
-  console.log('It worked! Returned IP:', ip);
-  fetchCoordsByIP(ip, (error, data) => {
-
-    if (error) {
-
-      console.log("It didn't work!", error);
-      return;
-    }
-
-    console.log(data);
-
-  })
-
-});
-
-
-// fetchCoordsByIP(() => {
-
-//   // inside the request callback ...
-//   // error can be set if invalid domain, user is offline, etc.
+//////
+// fetchMyIP((error, ip) => {
 //   if (error) {
-//     callback(error, null);
-//     return;
-//   }
-//   // if non-200 status, assume server error
-//   if (response.statusCode !== 200) {
-//     const msg = `Status Code ${response.statusCode} when fetching coordinates for IP. Response: ${body}`;
-//     callback(Error(msg), null);
+
+//     console.log("It didn't work!", error);
 //     return;
 //   }
 
-//   // if we get here, all's well and we got the data
+//   console.log('It worked! Returned IP:', ip);
 
-// })
+
+/////
+//   fetchCoordsByIP(ip, (error, data) => {
+
+//     if (error) {
+
+//       console.log("It didn't work!", error);
+//       return;
+//     }
+
+//     console.log(data);
+
+//   })
+
+// });
+
+////
+
+
+// for the fetchISSFlyOverTimes, you need to only export the fetchISSFlyOverTimes from iss.js file, and you need to comment out the fetchMyIP and fetchCoordbyIP to have this one work*/
+// const exampleCoords = { latitude: '49.27670', longitude: '-123.13000' };
+
+// fetchISSFlyOverTimes(exampleCoords, (error, passTimes) => {
+//   if (error) {
+//     console.log("It didn't work!", error);
+//     return;
+//   }
+
+//   console.log('It worked! Returned flyover times:', passTimes);
+// });
+
+
+
 
